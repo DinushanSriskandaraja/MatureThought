@@ -71,12 +71,15 @@ textarea {
     resize: none;
     padding: 20px;
     width: 100%;
-    background-color: var(--secLight);
+    background-color: var(--bg);
     max-height: 150px;
     border: none;
     outline: none;
     margin-right: 20px;
 }
+
+
+/* header*/
 
 .header {
     height: auto;
@@ -112,6 +115,9 @@ textarea {
     padding: 10px 50px;
 }
 
+
+/* left Panal */
+
 .leftPanal,
 .rightPanal {
     width: 30vw;
@@ -120,6 +126,15 @@ textarea {
     overflow: scroll;
     overflow-x: auto;
 }
+
+
+/* ########### */
+
+
+/* feed panal */
+
+
+/*############# */
 
 .feedPanal {
     display: flex;
@@ -149,7 +164,8 @@ textarea::-webkit-scrollbar {
 #draftPost {
     /* height: 30vh; */
     border-radius: 20px;
-    background-color: var(--secLight);
+    border: solid 2px var(--secDark);
+    background-color: var(--bg);
     color: var(--txt);
     font-weight: 500;
     margin: 20px;
@@ -236,6 +252,8 @@ textarea::-webkit-scrollbar {
 
 .profile {
     background-color: var(--bg);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 
 .profileData {
@@ -267,7 +285,8 @@ textarea::-webkit-scrollbar {
 .yourPost {
     width: 25vw;
     border-radius: 20px;
-    background-color: var(--secLight);
+    background-color: var(--bg);
+    border: solid 2px var(--secDark);
     color: var(--txt);
     font-weight: 500;
     margin-top: 20px;
@@ -292,15 +311,12 @@ textarea::-webkit-scrollbar {
     justify-content: end;
 }
 
-.newPost {
-    width: y;
-}
-
 .newPost form {
     height: 150px;
     border-radius: 20px;
+    border: solid 2px var(--secDark);
     padding: 8px;
-    background-color: var(--secLight);
+    background-color: var(--bg);
     display: flex;
     align-items: center;
 }
