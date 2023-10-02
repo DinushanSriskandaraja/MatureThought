@@ -1,13 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
-:root {
+
+/* :root {
     --bg: #FBFFFF;
     --txt: #4A4C4B;
     --secDark: #77C26F;
     --secLight: #C8C9CD;
     --blk: #9FA3A6;
+} */
+
+:root {
+    --bg: #18181b;
+    --txt: #fdfdfd;
+    --secDark: #7bbf15;
+    /* --secLight: #7bbf15; */
+    --blk: #9FA3A6;
 }
 
 * {
+    color: var(--txt);
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -72,10 +82,25 @@ textarea {
     padding: 20px;
     width: 100%;
     background-color: var(--bg);
-    max-height: 150px;
+    /* max-height: 500px; */
     border: none;
     outline: none;
     margin-right: 20px;
+}
+
+
+/* Global Class Style*/
+
+.profilePic-SM {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+}
+
+.profilePic-MD {
+    border-radius: 20px;
+    height: 100px;
+    width: 100px;
 }
 
 
@@ -120,11 +145,95 @@ textarea {
 
 .leftPanal,
 .rightPanal {
-    width: 30vw;
+    width: 25vw;
     margin: 20px;
     max-height: 90vh;
     overflow: scroll;
     overflow-x: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card {
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+    border-radius: 20px;
+    background-color: var(--secDark);
+    /* height: 100%; */
+}
+
+.leftPanal ul {
+    /* background-color: var(--secDark); */
+    width: 100%;
+    margin-top: 0;
+    padding: 2px;
+    padding-bottom: 35px;
+    /* margin: 20px; */
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    align-items: center;
+}
+
+.leftPanal li {
+    width: 100%;
+    text-align: center;
+    padding: 8px 10px;
+    margin: 7px;
+    border-radius: 20px;
+    background-color: var(--bg);
+}
+
+
+/* ######## */
+
+
+/* Profile */
+
+
+/* ######## */
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    width: 24.5vw;
+    /* top: 0; */
+    /* position: sticky; */
+    /* z-index: 1; */
+    /* background-color: var(--bg); */
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+#aboutUser {
+    text-align: left;
+}
+
+.profileData {
+    background-color: var(--bg);
+    text-align: center;
+    width: 70%;
+    padding-top: 55px;
+    padding-left: 10px;
+    /* border: solid 2px; */
+    border-color: var(--txt);
+    /* background-color: var(--bg); */
+    border-radius: 20px;
+}
+
+.profile .profilePic-MD {
+    /* border: solid 2.5px var(--txt); */
+    /* border-right-color: var(--blk);
+    border-left-color: var(--blk); */
+    background-color: var(--bg);
+    padding: 5px;
+    transform: translateY(50px);
 }
 
 
@@ -139,9 +248,9 @@ textarea {
 .feedPanal {
     display: flex;
     flex-direction: column;
-    max-height: 100vh;
+    /* max-height: 100vh; */
     width: 40vw;
-    height: 90vh;
+    height: 97.5vh;
     border-right: solid var(--blk) 2px;
     border-left: solid var(--blk) 2px;
     padding: 20px;
@@ -160,9 +269,7 @@ textarea::-webkit-scrollbar {
     display: none;
 }
 
-#post,
-#draftPost {
-    /* height: 30vh; */
+#post {
     border-radius: 20px;
     border: solid 2px var(--secDark);
     background-color: var(--bg);
@@ -189,126 +296,21 @@ textarea::-webkit-scrollbar {
     font-size: 10px;
 }
 
-#userProfilePic {
-    border-radius: 50%;
-    height: 50px;
-    width: 50px;
-}
-
-#feedPost {
+#feedPost,
+#ownPost {
     padding-left: 10px;
     padding-bottom: 20px;
 }
 
-#draftPost {
-    padding: 10px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: end;
-    /* justify-content: end; */
-}
-
-#draftPost p {
-    margin: 5px 10px;
-}
-
-#draftPost button {
-    color: var(--txt);
-    cursor: pointer;
-    background: transparent;
+.share {
     border: none;
-}
-
-#draftPost .share,
-.newPost .share {
-    border: none;
-    color: var(--txt);
+    color: var(--bg);
     gap: 8px;
     display: flex;
     right: 2px;
     padding: 8px 10px;
     background-color: var(--secDark);
     border-radius: 20px;
-}
-
-.leftPanal h4 {
-    top: 0;
-    position: sticky;
-    z-index: 1;
-    background-color: var(--bg);
-    padding-bottom: 5px;
-}
-
-.rightPanal .profile {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 25vw;
-    top: 0;
-    position: sticky;
-    z-index: 1;
-}
-
-.profile {
-    background-color: var(--bg);
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-}
-
-.profileData {
-    padding-top: 45px;
-    padding-left: 10px;
-    border: solid 2px;
-    border-color: var(--blk);
-    /* background-color: var(--bg); */
-    border-radius: 20px;
-}
-
-.profileData h4 {
-    padding-left: -20px;
-    text-align: center;
-}
-
-.rightPanal img {
-    border: solid 3px var(--bg);
-    border-right-color: var(--blk);
-    border-left-color: var(--blk);
-    background-color: var(--bg);
-    padding: 5px;
-    transform: translateY(35px);
-    border-radius: 50%;
-    height: 70px;
-    width: 70px;
-}
-
-.yourPost {
-    width: 25vw;
-    border-radius: 20px;
-    background-color: var(--bg);
-    border: solid 2px var(--secDark);
-    color: var(--txt);
-    font-weight: 500;
-    margin-top: 20px;
-    padding: 10px 20px;
-}
-
-.yourPost .postHeader {
-    display: flex;
-    align-items: center;
-    justify-content: end;
-}
-
-.yourPost p {
-    font-size: 12px;
-    line-height: 2px;
-}
-
-.postHeader button {
-    margin-top: -10px;
-    margin-left: 30px;
-    color: var(--txt);
-    justify-content: end;
 }
 
 .newPost form {
@@ -335,3 +337,24 @@ textarea::-webkit-scrollbar {
     background-color: var(--bg);
     border-color: var(--secDark);
 }
+
+
+/* @media (max-width:799px) {
+    .feedPanal {
+        width: 100%;
+        border: none;
+    }
+    .leftPanal {
+        display: none;
+    }
+    .rightPanal {
+        display: none;
+    }
+}
+
+@media (max-width:477px) {
+    .body {
+        padding: 0;
+    }
+    
+} */

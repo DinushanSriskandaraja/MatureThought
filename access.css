@@ -1,0 +1,43 @@
+form {
+    border-radius: 20px;
+    border: solid 2px var(--secDark);
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    /* margin: 20px; */
+    padding: 30px 0;
+}
+
+input {
+    width: 90%;
+    height: 30px;
+    padding: 8px;
+    align-items: center;
+    border-radius: 20px;
+    outline: none;
+    border: solid 2px var(--secDark);
+    background-color: var(--bg);
+}
+
+label {
+    color: var(--txt);
+    font-weight: 600;
+}
+
+.login {
+    display: flex;
+    justify-content: center;
+}
+
+.signUp {
+    display: flex;
+    justify-content: center;
+}
+
+body {
+    display: flex;
+    justify-content: space-between;
+}
