@@ -54,6 +54,7 @@ h6 {
 }
 
 p {
+    font-weight: 400;
     font-size: 14px;
     color: var(--txt);
     margin: 15px 0 20px 0;
@@ -162,7 +163,11 @@ textarea {
     align-items: center;
     width: 70%;
     border-radius: 20px;
-    background-color: var(--secDark);
+    border: solid 1px var(--secDark);
+    background-color: var(--bg);
+    -webkit-box-shadow: -1px 9px 35px -6px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -1px 9px 35px -6px rgba(0, 0, 0, 0.75);
+    box-shadow: -1px 9px 35px -6px rgba(0, 0, 0, 0.75);
     /* height: 100%; */
 }
 
@@ -189,9 +194,26 @@ textarea {
 .leftPanal button {
     margin: 7px;
     width: 100%;
-    padding: 8px 10px;
+    /* padding: 8px 10px; */
     margin: 7px;
+}
+
+.leftPanal button {
+    margin: 7px;
+    width: 100%;
+    padding: 8px 10px;
     border-radius: 20px;
+    font-weight: 600;
+    color: var(--bg);
+    background-color: var(--secDark);
+}
+
+#postBtn {
+    display: none;
+}
+
+#quizBtn {
+    display: block;
     font-weight: 600;
     color: var(--bg);
     background-color: var(--secDark);
@@ -262,7 +284,8 @@ textarea {
 
 /*############# */
 
-.feedPanal {
+.feedPanal,
+#quiz {
     display: flex;
     flex-direction: column;
     /* max-height: 100vh; */
@@ -271,7 +294,15 @@ textarea {
     border-right: solid var(--blk) 2px;
     border-left: solid var(--blk) 2px;
     padding: 20px;
+}
+
+.feedPanal {
     justify-content: end;
+}
+
+#quiz {
+    display: none;
+    justify-content: center;
 }
 
 .scrollPost {
@@ -287,6 +318,7 @@ textarea::-webkit-scrollbar {
 }
 
 #post {
+    height: auto;
     border-radius: 20px;
     border: solid 2px var(--secDark);
     background-color: var(--bg);
@@ -328,6 +360,11 @@ textarea::-webkit-scrollbar {
     padding: 8px 10px;
     background-color: var(--secDark);
     border-radius: 20px;
+}
+
+.newPost {
+    position: sticky;
+    bottom: 0;
 }
 
 .newPost form {
