@@ -32,21 +32,15 @@
                         </p>
                     </div>
                 </div>
-                <ul>
-                    <!-- <li><button>Home</button></li> -->
-                    <!-- <li><button>Draft</button></li> -->
-                    <!-- <li> -->
+                <div class="btnSet">
+
                     <button onclick="attemptQuiz()" id="quizBtn">Attumpt Quiz</button>
-                    <!-- </li>
-                    <li> -->
                     <button onclick="seePost()" id="postBtn">See Post</button>
-                    <!-- </li> -->
-                    <!-- <li><button>LogIn</button></li> -->
-                    <!-- <li> -->
-                    <button>LogOut</button>
-                    <!-- </li> -->
-                    <!-- <li><button></button></li> -->
-                </ul>
+                    <button onclick="logOut()" id="logOut">LogOut</button>
+                    <button onclick="logIn()" id="logIn">LogIn</button>
+
+
+                </div>
             </div>
         </section>
 
@@ -68,7 +62,7 @@
                 </div>
 
                 <!-- Post Writing -->
-                <div class="newPost">
+                <div class="newPost" id="postWriter">
                     <form action="">
                         <textarea name="" id="postContent"></textarea>
                         <div class="postBtn">

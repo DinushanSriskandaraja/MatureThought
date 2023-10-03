@@ -1,0 +1,4 @@
+const postData = [ { userName: "Dinushan", time: "12.00 P.M", content: "This is my first post" }, { userName: "John", time: "1.30 P.M", content: "Hello, world!" }, // Add more posts here if needed ]; function loadPosts(postData) { const postsContainer
+= document.getElementById("postsContainer"); for (let i = 0; i < postData.length; i++) { const post=p ostData[i]; const postDiv=d ocument.createElement( "div"); postDiv.classList.add( "post"); const time=d ocument.createElement( "p"); time.textContent="Time: "
+    + post.time; const userName=d ocument.createElement( "p"); userName.textContent="User: " + post.userName; const content=d ocument.createElement( "p"); content.textContent="Content: " + post.content; postDiv.appendChild(time); postDiv.appendChild(userName);
+    postDiv.appendChild(content); postsContainer.appendChild(postDiv); } } loadPosts(postData);
