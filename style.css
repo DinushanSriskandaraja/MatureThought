@@ -182,10 +182,27 @@ textarea {
 .leftPanal li {
     width: 100%;
     text-align: center;
+    /* padding: 8px 10px; */
+    margin: 7px;
+}
+
+.leftPanal button {
+    margin: 7px;
+    width: 100%;
     padding: 8px 10px;
     margin: 7px;
     border-radius: 20px;
-    background-color: var(--bg);
+    font-weight: 600;
+    color: var(--bg);
+    background-color: var(--secDark);
+}
+
+#postBtn {
+    display: none;
+}
+
+#quizBtn {
+    display: block;
 }
 
 
