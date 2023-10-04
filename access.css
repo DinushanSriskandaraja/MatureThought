@@ -1,4 +1,12 @@
+body {
+    background-color: var(--bg);
+}
+
 form {
+    -webkit-box-shadow: -1px 9px 35px -6px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -1px 9px 35px -6px rgba(0, 0, 0, 0.75);
+    box-shadow: -1px 9px 35px -6px rgba(0, 0, 0, 0.75);
+    background-color: var(--bg);
     border-radius: 20px;
     border: solid 2px var(--secDark);
     display: flex;
@@ -7,7 +15,6 @@ form {
     gap: 20px;
     justify-content: center;
     align-items: center;
-    /* margin: 20px; */
     padding: 30px 0;
 }
 
@@ -16,28 +23,49 @@ input {
     height: 30px;
     padding: 8px;
     align-items: center;
-    border-radius: 20px;
     outline: none;
-    border: solid 2px var(--secDark);
+    border: none;
     background-color: var(--bg);
+    border-bottom: solid 2px var(--secDark);
 }
 
 label {
     color: var(--txt);
     font-weight: 600;
+    padding-left: 20px;
+    width: 100%;
+    text-align: left;
 }
 
 .login {
-    display: flex;
+    height: 50vh;
     justify-content: center;
+}
+
+#login {
+    display: flex;
+}
+
+#signUp {
+    display: none;
 }
 
 .signUp {
-    display: flex;
+    height: 50vh;
     justify-content: center;
 }
 
-body {
+section {
+    height: 100vh;
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+}
+
+button {
+    width: 40%;
+    padding: 10px 8px;
+    margin-top: 50px;
+    border: 2px solid var(--secDark);
+    border-radius: 20px;
 }

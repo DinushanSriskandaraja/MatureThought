@@ -26,7 +26,7 @@ const questions = [{
 ];
 
 let currentQuestionIndex = 0;
-var correctAnswerCount = 0;
+let correctAnswerCount = 0;
 
 const questionElement = document.getElementById("question");
 const optionsContainer = document.getElementById("options-container");
@@ -42,10 +42,7 @@ function displayQuestion(question) {
         optionElement.addEventListener("click", () => checkAnswer(option, question.correctAnswer));
         optionsContainer.appendChild(optionElement);
     }
-
 }
-// Initial display
-displayQuestion(questions[currentQuestionIndex]);
 
 function checkAnswer(selectedOption, correctAnswer) {
     if (selectedOption === correctAnswer) {
@@ -63,26 +60,14 @@ function checkAnswer(selectedOption, correctAnswer) {
         displayQuestion(questions[currentQuestionIndex]);
     } else {
         if ((correctAnswerCount / questions.length) * 100 >= 70) {
-            isegistered();
-        } else {
-            alert("Score is insufficient, Please try again")
-            seePost();
-        }
-    }
-    return correctAnswerCount;
-}
-
-function isegistered() {
-    if (isLogin) {
-        if ((correctAnswerCount / questions.length) * 100 >= 70) {
             window.location.href = "access.html";
+            var signUp = document.getElementById("signUp");
+            signUp.style.display = "felx";
         } else {
             alert("Score is insufficient, Please try again")
             seePost();
         }
-    } else {
-        alert("Score succesfully updates!");
-        seePost();
     }
-    return isLogin;
 }
+// Initial display
+displayQuestion(questions[currentQuestionIndex]);
