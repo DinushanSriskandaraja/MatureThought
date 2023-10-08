@@ -61,8 +61,6 @@ function checkAnswer(selectedOption, correctAnswer) {
     } else {
         if ((correctAnswerCount / questions.length) * 100 >= 70) {
             window.location.href = "access.html";
-            var signUp = document.getElementById("signUp");
-            signUp.style.display = "felx";
         } else {
             alert("Score is insufficient, Please try again")
             seePost();

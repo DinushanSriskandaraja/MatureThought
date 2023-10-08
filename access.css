@@ -47,7 +47,8 @@ label {
 }
 
 #signUp {
-    display: none;
+    margin-left: 20px;
+    display: flex;
 }
 
 .signUp {

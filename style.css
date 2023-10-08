@@ -228,6 +228,19 @@ textarea {
     display: block;
 }
 
+#editProfile {
+    display: none;
+}
+
+#editProfile svg {
+    height: 14px;
+    padding-right: 8px;
+}
+
+svg {
+    color: var(--secDark);
+}
+
 
 /* ######## */
 
@@ -274,6 +287,16 @@ textarea {
     background-color: var(--bg);
     padding: 5px;
     transform: translateY(50px);
+}
+
+
+/* privacy Policy */
+
+.privacyPolicy {
+    font-size: 14px;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 25px;
 }
 
 
@@ -379,7 +402,11 @@ textarea::-webkit-scrollbar {
 }
 
 #postWriter {
-    display: block;
+    display: none;
+}
+
+#shared {
+    display: none;
 }
 
 

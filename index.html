@@ -33,15 +33,17 @@
                     </div>
                 </div>
                 <div class="btnSet">
-
+                    <button id="editProfile" onclick="editProfile()" type="button"><svg xmlns="http://www.w3.org/2000/svg" fill="var(--bg)" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                        <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                        <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                      </svg> Edit Profile</button>
                     <button onclick="attemptQuiz()" id="quizBtn">Attumpt Quiz</button>
                     <button onclick="seePost()" id="postBtn">See Post</button>
-                    <button onclick="logOut()" id="logOut">LogOut</button>
-                    <button onclick="logIn()" id="logIn">LogIn</button>
-
-
+                    <button onclick="logOutTriger()" id="logOut">LogOut</button>
+                    <button onclick="logInTriger()" id="logIn">LogIn</button>
                 </div>
             </div>
+            <a class="privacyPolicy" href="privacyPolicy.html">privacy policy</a>
         </section>
 
         <!-- Feed Panal -->
@@ -67,7 +69,7 @@
                         <textarea name="" id="postContent"></textarea>
                         <div class="postBtn">
                             <!-- <button class="draft">Draft<i class="fa-regular fa-paper-plane"></i></button> -->
-                            <button class="share">Share<i class="fa-regular fa-paper-plane"></i></button>
+                            <button class="share" onclick="sharePost()" type="button">Share<i class="fa-regular fa-paper-plane"></i></button>
                         </div>
                     </form>
                 </div>
@@ -77,18 +79,20 @@
         <section id="quiz"></section>
         <!-- Own Post -->
         <section class="rightPanal">
-            <div id="post">
-                <div id="postUser">
-                    <img src="/misaya muruku dp.jpg" alt="" srcset="" id="userProfilePic" class="profilePic-SM">
-                    <div class="userData">
+            <div id="shared">
+                <div id="post">
+                    <div id="postUser">
+                        <img src="/misaya muruku dp.jpg" alt="" srcset="" id="userProfilePic" class="profilePic-SM">
+                        <div class="userData">
 
-                        <h6 id="ownName">Dinushan Sriskandaraja</h6>
-                        <p>12.00 P.M</p>
+                            <h6 id="ownName">Dinushan Sriskandaraja</h6>
+                            <p>12.00 P.M</p>
+                        </div>
                     </div>
-                </div>
-                <div id="ownPost">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi fugit expedita, laudantium pariatur deleniti, dolorem illo eligendi omnis voluptas iusto reiciendis itaque dignissimos modi, beatae ab ratione maiores optio voluptates.
-                    </p>
+                    <div id="ownPost">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi fugit expedita, laudantium pariatur deleniti, dolorem illo eligendi omnis voluptas iusto reiciendis itaque dignissimos modi, beatae ab ratione maiores optio voluptates.
+                        </p>
+                    </div>
                 </div>
             </div>
 

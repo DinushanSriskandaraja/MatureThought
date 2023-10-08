@@ -24,41 +24,34 @@ function seePost() {
     quizBtn.style.display = "block";
 }
 
-function logOut() {
+function logOutTriger() {
     var logInBtn = document.getElementById("logIn");
     var logOutBtn = document.getElementById("logOut");
+    var editProfile = document.getElementById("editProfile");
     logInBtn.style.display = "block";
     logOutBtn.style.display = "none";
+    editProfile.style.display = "none";
+    postWriter.style.display = "none";
+    shared.style.display = "none";
     return isLogin = false;
 }
 
-function logIn() {
+function logInTriger() {
     var logInBtn = document.getElementById("logIn");
     var logOutBtn = document.getElementById("logOut");
+    var editProfile = document.getElementById("editProfile");
     logInBtn.style.display = "none";
     logOutBtn.style.display = "block";
+    editProfile.style.display = "block";
+    postWriter.style.display = "block";
     window.open("access.html", "_blank");
+    shared.style.display = "block";
+
     // window.location.href = "access.html";
     return isLogin = true;
 }
 
-// function isegistered() {
-//     if (isLogin) {
-//         if ((correctAnswerCount / questions.length) * 100 >= 70) {
-//             window.location.href = "access.html";
-//         } else {
-//             alert("Score is insufficient, Please try again")
-//             seePost();
-//         }
-//     } else {
-//         alert("Score succesfully updates!");
-//     }
-// }
-// function isLoged() {
-//     if (isLogin) {
-//         logOut();
-//     } else {
-//         logIn();
-//     }
-//     return isLogin;
-// }
+function editProfile() {
+    window.location.href = "profile.html";
+
+}
