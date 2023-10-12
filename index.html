@@ -4,19 +4,41 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MetureThought</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer"
-    />
+    <link rel="icon" href="assets/logo.ico" type="image/x-icon" />
+    <!-- Option 1: Include in HTML -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body onload="loader()">
     <script src="script.js"></script>
     <script src="post.js"></script>
-
+    <nav>
+        <div class="nav-content">
+            <div class="toggle-btn">
+                <img src="assets/logo1.png" alt="">
+            </div>
+            <span style="--i:1;">
+            <!-- <button href="#"><i class="bi bi-box-arrow-right"></i></button> -->
+          </span>
+            <span style="--i:2;">
+            <button href="#"><i class="bi bi-box-arrow-in-right"></i></button>
+          </span>
+            <span style="--i:3;">
+            <button href="#"><i class="bi bi-chat-square-dots"></i></button>
+          </span>
+            <span style="--i:4;">
+            <button href="#"><i class="bi bi-patch-question"></i></button>
+          </span>
+            <span style="--i:5;">
+            <button href="#"><i class="bi bi-person-circle"></i></button>
+          </span>
+        </div>
+    </nav>
     <section class="body">
         <section class="leftPanal">
             <!-- Profile Card -->
@@ -98,6 +120,37 @@
 
         </section>
     </section>
+    <script>
+        const nav = document.querySelector("nav"),
+            toggleBtn = nav.querySelector(".toggle-btn");
+        toggleBtn.addEventListener("click", () => {
+            nav.classList.toggle("open");
+        });
+        // js code to make draggable nav
+        function onDrag({
+            movementY
+        }) { //movementY gets mouse vertical value
+            const navStyle = window.getComputedStyle(nav), //getting all css style of nav
+                navTop = parseInt(navStyle.top), // getting nav top value & convert it into string
+                navHeight = parseInt(navStyle.height), // getting nav height value & convert it into string
+                windHeight = window.innerHeight; // getting window height
+            nav.style.top = navTop > 0 ? `${navTop + movementY}px` : "1px";
+            if (navTop > windHeight - navHeight) {
+                nav.style.top = `${windHeight - navHeight}px`;
+            }
+        }
+        //this function will call when user click mouse's button and  move mouse on nav
+        nav.addEventListener("mousedown", () => {
+            nav.addEventListener("mousemove", onDrag);
+        });
+        //these function will call when user relase mouse button and leave mouse from nav
+        nav.addEventListener("mouseup", () => {
+            nav.removeEventListener("mousemove", onDrag);
+        });
+        nav.addEventListener("mouseleave", () => {
+            nav.removeEventListener("mousemove", onDrag);
+        });
+    </script>
 </body>
 
 </html>
