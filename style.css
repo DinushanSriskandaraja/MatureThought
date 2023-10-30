@@ -1,20 +1,38 @@
 @import url("https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 /* :root {
-    --bg: #FBFFFF;
-    --txt: #4A4C4B;
-    --secDark: #77C26F;
+    --bg: #e9dfc6;
+    --txt: #0b1725;
+    --secDark: #0b1725;
+    --secLight: #C8C9CD;
+    --blk: #9FA3A6;
+} */
+
+
+/* :root {
+    --bg: #fffcff;
+    --txt: #0b1725;
+    --secDark: #0b1725;
     --secLight: #C8C9CD;
     --blk: #9FA3A6;
 } */
 
 :root {
+    --bg: #0b1725;
+    --txt: #F2F2F2;
+    --secDark: #F2D98D;
+    --secLight: #C8C9CD;
+    --blk: #9FA3A6;
+}
+
+
+/* :root {
     --bg: #18181b;
     --txt: #fdfdfd;
     --secDark: #7bbf15;
-    /* --secLight: #7bbf15; */
+    --secLight: #7bbf15;
     --blk: #9FA3A6;
-}
+} */
 
 * {
     color: var(--txt);
@@ -117,6 +135,7 @@ nav {
     align-items: center;
     justify-content: center;
     cursor: grab;
+    visibility: hidden;
 }
 
 nav .nav-content {
@@ -296,7 +315,7 @@ nav.open .nav-content span {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 70%;
+    width: 20vw;
     border-radius: 20px;
     border: solid 1px var(--secDark);
     background-color: var(--bg);
@@ -390,7 +409,7 @@ svg {
     flex-direction: column;
     /* justify-content: center; */
     align-items: center;
-    width: 24.5vw;
+    width: 18vw;
     /* top: 0; */
     /* position: sticky; */
     /* z-index: 1; */
@@ -404,9 +423,9 @@ svg {
 }
 
 .profileData {
-    background-color: var(--bg);
+    /* background-color: var(--bg); */
     text-align: center;
-    width: 60%;
+    width: 18vw;
     padding-top: 55px;
     padding-left: 10px;
     /* border: solid 2px; */
@@ -519,6 +538,10 @@ textarea::-webkit-scrollbar {
     background-color: var(--bg);
     border: solid 2px var(--secDark);
     border-radius: 20px;
+}
+
+.share i.fa-regular {
+    color: var(--txt);
 }
 
 .newPost {

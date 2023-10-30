@@ -60,7 +60,7 @@ function checkAnswer(selectedOption, correctAnswer) {
         displayQuestion(questions[currentQuestionIndex]);
     } else {
         if ((correctAnswerCount / questions.length) * 100 >= 70) {
-            window.location.href = "access.html";
+            window.location.href = "signup.html";
         } else {
             alert("Score is insufficient, Please try again")
             seePost();

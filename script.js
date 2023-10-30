@@ -62,6 +62,6 @@ function logInTriger() {
 }
 
 function editProfile() {
-    window.location.href = "profile.html";
+    window.location.href = "editProfile.html";
 
 }
