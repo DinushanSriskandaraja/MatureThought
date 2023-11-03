@@ -1,33 +1,36 @@
 // $(function() {
 //     $("#quiz").load("access.html");
 // });
-var isLogin = false;
+let isLogin = false;
 
 function loader() {
     if (document.readyState !== "complete") {
-        document.querySelector("body").style.visibility = "hidden";
-        document.querySelector("#loader").style.visibility = "visible";
+        document.getElementsByClassName("body").style.visibility = "hidden";
+        document.getElementById("loader").style.visibility = "visible";
     } else {
-        document.querySelector("#loader").style.display = "none";
-        document.querySelector("body").style.visibility = "visible";
+        document.getElementById("loader").style.visibility = "hidden";
+        document.getElementsByClassName("body").style.visibility = "visible";
     }
 }
 
 function attemptQuiz() {
-    var quiz = document.getElementById("quiz");
-    var post = document.getElementById("scrollPost");
-    var postBtn = document.getElementById("postBtn");
-    // var postBtn = document.getElementById("quizBtn");
+    let quiz = document.getElementById("quiz");
+    let post = document.getElementById("scrollPost");
+    let postBtn = document.getElementById("postBtn");
+    // let postBtn = document.getElementById("quizBtn");
     post.style.display = "none";
     quiz.style.display = "block";
     $("#quiz").load("quiz.html");
+    // includeHTML()
     postBtn.style.display = "block";
     quizBtn.style.display = "none";
 }
 
+
+
 function seePost() {
-    var quiz = document.getElementById("quiz");
-    var post = document.getElementById("scrollPost");
+    let quiz = document.getElementById("quiz");
+    let post = document.getElementById("scrollPost");
     post.style.display = "flex";
     quiz.style.display = "none";
     postBtn.style.display = "none";
@@ -35,9 +38,13 @@ function seePost() {
 }
 
 function logOutTriger() {
-    var logInBtn = document.getElementById("logIn");
-    var logOutBtn = document.getElementById("logOut");
-    var editProfile = document.getElementById("editProfile");
+    let logInBtn = document.getElementById("logIn");
+    let logOutBtn = document.getElementById("logOut");
+    let editProfile = document.getElementById("editProfile");
+    let logedProfile = document.getElementById("logedin");
+    let logedOutProfile = document.getElementById("logedout");
+    logedOutProfile.style.display = "none";
+    logedProfile.style.display = "flex";
     logInBtn.style.display = "block";
     logOutBtn.style.display = "none";
     editProfile.style.display = "none";
@@ -47,9 +54,13 @@ function logOutTriger() {
 }
 
 function logInTriger() {
-    var logInBtn = document.getElementById("logIn");
-    var logOutBtn = document.getElementById("logOut");
-    var editProfile = document.getElementById("editProfile");
+    let logInBtn = document.getElementById("logIn");
+    let logOutBtn = document.getElementById("logOut");
+    let editProfile = document.getElementById("editProfile");
+    let logedProfile = document.getElementById("logedin");
+    let logedOutProfile = document.getElementById("logedout");
+    logedOutProfile.style.display = "flex";
+    logedProfile.style.display = "none";
     logInBtn.style.display = "none";
     logOutBtn.style.display = "block";
     editProfile.style.display = "block";

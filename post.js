@@ -25,6 +25,8 @@ function duplicatePostWithInput(username, timestamp, postContent) {
     postContainer.appendChild(newPostContainer);
 }
 
+
+
 function getTime() {
     var currentTime = new Date();
     var hours = currentTime.getHours();

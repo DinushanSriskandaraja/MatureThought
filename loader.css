@@ -1,8 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
 :root {
-    --bg: #18181b;
-    --txt: #fdfdfd;
-    --secDark: #7bbf15;
+    --bg: #fffcff;
+    --txt: #0b1725;
+    --secDark: #0b1725;
+    --secLight: #C8C9CD;
     --blk: #9FA3A6;
 }
 
@@ -12,38 +13,34 @@
 }
 
 body {
-    background-color: #18181b;
-}
-
-#pre-loader {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-color: var(--bg);
-    min-height: 90vh;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--bg);
 }
 
-#pre-loader img {
-    opacity: 0;
+h2 {
     position: relative;
-    /* height: 50%; */
-    width: 30%;
+    font-size: 8vw;
     color: var(--bg);
-    -webkit-text-stroke: .1vw var(--secDark);
-    /* text-transform: uppercase; */
+    -webkit-text-stroke: 0.3vw var(--secLight);
+    text-transform: uppercase;
 }
 
-#shine {
-    content: " ";
-    width: 10%;
-    height: 30%;
-    background-color: var(--txt);
-}
-
-img {
+h2::before {
+    padding: 0;
+    margin: 0;
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    color: var(--txt);
+    -webkit-text-stroke: 0;
+    border-right: 2px solid var(--txt);
+    overflow: hidden;
     animation: animate 6s linear infinite;
 }
 
@@ -51,12 +48,12 @@ img {
     0%,
     10%,
     100% {
-        opacity: 0;
-        /* width: 0%; */
+        /* opacity: 0; */
+        width: 0%;
     }
     70%,
     90% {
-        opacity: 1;
-        /* width: 100%; */
+        /* opacity: 1; */
+        width: 100%;
     }
 }

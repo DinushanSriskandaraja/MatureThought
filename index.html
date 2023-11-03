@@ -17,21 +17,31 @@
 </head>
 
 <body onload="loader()">
-
+    <!-- <div id="loader">
+        <h2 data-text="mature...">mature...</h2>
+    </div> -->
+    <!-- <iframe src="loader.html" id="loading" frameborder="0"></iframe> -->
 
     <section class="body">
         <section class="leftPanal">
             <!-- Profile Card -->
             <div class="card">
-                <div class="profile">
+                <div class="profile" id="logedin">
+                    <img src="/assets/logo.png" alt="" id="profilePic" class="profilePic-MD">
+                    <div class="profileData">
+                        <h4>Mature Thoughts</h4>
+                        <!-- <h6>user_name</h6> -->
+                        <p><a href="">mail</a></p>
+                        <p id="aboutUser">A sanctuary for mature minds to exchange refined thoughts.</p>
+                    </div>
+                </div>
+                <div class="profile" id="logedout">
                     <img src="/assets/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg" alt="" id="profilePic" class="profilePic-MD">
                     <div class="profileData">
                         <h4>Dinushan Sriskandaraja</h4>
                         <!-- <h6>user_name</h6> -->
                         <p><a href="">mail</a></p>
-                        <p id="aboutUser">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed commodi natus facere corporis repellat optio, labore magni laborum dolore corrupti molestias impedit exercitationem odit. Recusandae adipisci fugit numquam obcaecati
-                            quibusdam!
-                        </p>
+                        <p id="aboutUser">Curator of Knowledge, Advocate of Wisdom, and Champion of Thoughtful Discourse. Join me in cultivating a community of mature minds.</p>
                     </div>
                 </div>
                 <div class="btnSet">
@@ -66,8 +76,7 @@
                         </div>
                     </div>
                     <div id="feedPost">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi fugit expedita, laudantium pariatur deleniti, dolorem illo eligendi omnis voluptas iusto reiciendis itaque dignissimos modi, beatae ab ratione maiores optio voluptates.
-                        </p>
+                        <p>🚀 Excited to launch MatureThoughts, a space for insightful discussions and mature perspectives. Let's explore the depths of knowledge and wisdom together! 🧠💬 #MatureThoughts #WisdomSharing</p>
                     </div>
                 </div>
                 <div id="postContainer"></div>
@@ -87,11 +96,12 @@
         </section>
 
         <section id="quiz"></section>
+        <!-- <iframe  src="quiz.html" frameborder="0"></iframe> -->
         <!-- Own Post -->
         <section class="rightPanal">
             <div id="shared">
                 <h4>Your Writings</h4>
-                <div id="post">
+                <!-- <div id="post">
                     <div id="postUser">
                         <img src="/assets/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg" alt="" srcset="" id="userProfilePic" class="profilePic-SM">
                         <div class="userData">
@@ -101,10 +111,23 @@
                         </div>
                     </div>
                     <div id="ownPost">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi fugit expedita, laudantium pariatur deleniti, dolorem illo eligendi omnis voluptas iusto reiciendis itaque dignissimos modi, beatae ab ratione maiores optio voluptates.
-                        </p>
+                        <p>🚀 Excited to launch MatureThoughts, a space for insightful discussions and mature perspectives. Let's explore the depths of knowledge and wisdom together! 🧠💬 #MatureThoughts #WisdomSharing</p>
                     </div>
 
+                </div> -->
+                <div id="post">
+                    <div id="postUser">
+                        <img src="/assets/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg" alt="" srcset="" id="userProfilePic" class="profilePic-SM">
+                        <div class="userData">
+                            <a href="userProfile.html">
+                                <h6 id="userName">Dinushan Sriskandaraja</h6>
+                            </a>
+                            <p>12.00 P.M</p>
+                        </div>
+                    </div>
+                    <div id="feedPost">
+                        <p>🚀 Excited to launch MatureThoughts, a space for insightful discussions and mature perspectives. Let's explore the depths of knowledge and wisdom together! 🧠💬 #MatureThoughts #WisdomSharing</p>
+                    </div>
                 </div>
                 <div id="postContainer"></div>
 
