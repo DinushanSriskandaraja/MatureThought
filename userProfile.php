@@ -11,6 +11,12 @@
 </head>
 
 <body>
+    <?php
+    session_start();
+    if(!isset($_SESSION['mail'])){
+        header("Location:access.html");
+    }
+    ?>
     <section class="body">
         <section class="leftPanal">
             <!-- Profile Card -->

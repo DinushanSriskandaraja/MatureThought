@@ -122,13 +122,14 @@ textarea {
     width: 100px;
 }
 
-#logedin {
+
+/* #logedin {
     display: flex;
 }
 
 #logedout {
     display: none;
-}
+} */
 
 
 /* header*/
@@ -211,7 +212,7 @@ textarea {
 }
 
 #logOut {
-    display: none;
+    display: block;
 }
 
 #logIn {
@@ -246,17 +247,19 @@ textarea {
     background-color: var(--secDark);
 }
 
-#postBtn {
+
+/* #postBtn {
     display: none;
-}
+} */
 
 #quizBtn {
     display: block;
 }
 
-#editProfile {
+
+/* #editProfile {
     display: none;
-}
+} */
 
 #editProfile svg {
     height: 14px;
@@ -431,13 +434,15 @@ textarea::-webkit-scrollbar {
     align-items: center;
 }
 
-#postWriter {
-    display: none;
-}
 
-#shared {
+/* #postWriter {
     display: none;
-}
+} */
+
+
+/* #shared {
+    display: none;
+} */
 
 @media (max-width:799px) {
     .feedPanal {

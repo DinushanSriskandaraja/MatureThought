@@ -12,11 +12,17 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <!-- <script src="script.js"></script> -->
     <script src="post.js"></script>
 </head>
 
-<body onload="loader()">
+<body >
+<?php
+                    session_start();
+                
+                    // Check if the session storage item exists
+                    $sessionExists = isset($_SESSION['mail']);
+                    ?>
     <!-- <div id="loader">
         <h2 data-text="mature...">mature...</h2>
     </div> -->
@@ -26,6 +32,7 @@
         <section class="leftPanal">
             <!-- Profile Card -->
             <div class="card">
+            <?php if (!$sessionExists):?>
                 <div class="profile" id="logedin">
                     <img src="/assets/logo.png" alt="" id="profilePic" class="profilePic-MD">
                     <div class="profileData">
@@ -35,6 +42,8 @@
                         <p id="aboutUser">A sanctuary for mature minds to exchange refined thoughts.</p>
                     </div>
                 </div>
+                <?php else: ?>
+
                 <div class="profile" id="logedout">
                     <img src="/assets/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg" alt="" id="profilePic" class="profilePic-MD">
                     <div class="profileData">
@@ -44,19 +53,23 @@
                         <p id="aboutUser">Curator of Knowledge, Advocate of Wisdom, and Champion of Thoughtful Discourse. Join me in cultivating a community of mature minds.</p>
                     </div>
                 </div>
+                <?php endif; ?>
                 <div class="btnSet">
-                    <button id="editProfile" onclick="editProfile()" type="button"><svg
-                            xmlns="http://www.w3.org/2000/svg" fill="var(--bg)" class="bi bi-pencil-square"
-                            viewBox="0 0 16 16">
-                            <path
-                                d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
-                            <path fill-rule="evenodd"
-                                d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
-                        </svg> Edit Profile</button>
+                    
                     <button onclick="attemptQuiz()" id="quizBtn">Attumpt Quiz</button>
                     <button onclick="seePost()" id="postBtn">See Post</button>
-                    <button onclick="logOutTriger()" id="logOut">LogOut</button>
-                    <button onclick="logInTriger()" id="logIn">LogIn</button>
+                    
+                    
+                
+                    <?php if ($sessionExists):?>
+                        <form method="post" action="/metureThought/php/access.php">
+            <button type="submit" name="logOut">Log Out</button>
+        </form>
+                    <?php else: ?>
+    
+                        <button  onclick='window.location.href = "access.html"'   >Log In</button>
+                    <?php endif; ?>
+                    
                 </div>
             </div>
             <a class="privacyPolicy" href="privacyPolicy.html">privacy policy</a>
@@ -80,7 +93,7 @@
                     </div>
                 </div>
                 <div id="postContainer"></div>
-
+                <?php if ($sessionExists):?>
                 <!-- Post Writing -->
                 <div class="newPost" id="postWriter">
                     <form action="">
@@ -92,6 +105,8 @@
                         </div>
                     </form>
                 </div>
+                <?php endif; ?>
+
             </div>
         </section>
 

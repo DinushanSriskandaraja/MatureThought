@@ -1,7 +1,7 @@
 // $(function() {
 //     $("#quiz").load("access.html");
 // });
-let isLogin = false;
+// let isLogin = false;
 
 function loader() {
     if (document.readyState !== "complete") {
@@ -38,35 +38,35 @@ function seePost() {
 }
 
 function logOutTriger() {
-    let logInBtn = document.getElementById("logIn");
-    let logOutBtn = document.getElementById("logOut");
-    let editProfile = document.getElementById("editProfile");
-    let logedProfile = document.getElementById("logedin");
-    let logedOutProfile = document.getElementById("logedout");
-    logedOutProfile.style.display = "none";
-    logedProfile.style.display = "flex";
-    logInBtn.style.display = "block";
-    logOutBtn.style.display = "none";
-    editProfile.style.display = "none";
-    postWriter.style.display = "none";
-    shared.style.display = "none";
-    return isLogin = false;
+    // let logInBtn = document.getElementById("logIn");
+    // let logOutBtn = document.getElementById("logOut");
+    // let editProfile = document.getElementById("editProfile");
+    // let logedProfile = document.getElementById("logedin");
+    // let logedOutProfile = document.getElementById("logedout");
+    // logedOutProfile.style.display = "none";
+    // logedProfile.style.display = "flex";
+    // logInBtn.style.display = "block";
+    // logOutBtn.style.display = "none";
+    // editProfile.style.display = "none";
+    // postWriter.style.display = "none";
+    // shared.style.display = "none";
+    // return isLogin = false;
 }
 
 function logInTriger() {
-    let logInBtn = document.getElementById("logIn");
-    let logOutBtn = document.getElementById("logOut");
-    let editProfile = document.getElementById("editProfile");
-    let logedProfile = document.getElementById("logedin");
-    let logedOutProfile = document.getElementById("logedout");
-    logedOutProfile.style.display = "flex";
-    logedProfile.style.display = "none";
-    logInBtn.style.display = "none";
-    logOutBtn.style.display = "block";
-    editProfile.style.display = "block";
-    postWriter.style.display = "block";
-    window.open("access.html", "_blank");
-    shared.style.display = "block";
+    // let logInBtn = document.getElementById("logIn");
+    // let logOutBtn = document.getElementById("logOut");
+    // let editProfile = document.getElementById("editProfile");
+    // let logedProfile = document.getElementById("logedin");
+    // let logedOutProfile = document.getElementById("logedout");
+    // logedOutProfile.style.display = "flex";
+    // logedProfile.style.display = "none";
+    // logInBtn.style.display = "none";
+    // logOutBtn.style.display = "block";
+    // editProfile.style.display = "block";
+    // postWriter.style.display = "block";
+    // window.open("access.html");
+    // shared.style.display = "block";
 
     // window.location.href = "access.html";
     return isLogin = true;
