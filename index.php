@@ -60,7 +60,7 @@
                     <button onclick="attemptQuiz()" id="quizBtn">Attumpt Quiz</button>
                     <button onclick="seePost()" id="postBtn">See Post</button>
                     <?php if ($sessionExists): ?>
-                        <form method="post" action="/metureThought/php/access.php">
+                        <form method="post" action="php/access.php">
                             <button type="submit" name="logOut">Log Out</button>
                         </form>
                     <?php else: ?>
