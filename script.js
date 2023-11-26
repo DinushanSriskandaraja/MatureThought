@@ -20,7 +20,7 @@ function attemptQuiz() {
     // let postBtn = document.getElementById("quizBtn");
     post.style.display = "none";
     quiz.style.display = "block";
-    $("#quiz").load("quiz.html");
+    $("#quiz").load("quiz.php");
     // includeHTML()
     postBtn.style.display = "block";
     quizBtn.style.display = "none";
