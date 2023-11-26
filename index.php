@@ -65,7 +65,7 @@
                         </form>
                     <?php else: ?>
 
-                        <button onclick='window.location.href = "access.html"'>Log In</button>
+                        <button onclick='window.location.href = "access.php"'>Log In</button>
                     <?php endif; ?>
                 </div>
             </div>
