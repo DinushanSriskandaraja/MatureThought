@@ -1,10 +1,6 @@
 <?php
 include('config.php');
-// if (!$conn) {
-//     echo '<script>alert("not connected")</script>';
-// }else{
-//     echo '<script>alert("connected")</script>'; }
-// echo"hi";
+
 if(isset($_POST["btnLogin"])){
     
     $mail=$_POST["mail"];   

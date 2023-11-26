@@ -23,45 +23,6 @@
             </form>
         </div>
     </section>
-
-    <!-- <script src="script.js"></script>
-    <script src="quiz.js"></script>
-    <script src="access.js"></script> -->
 </body>
-
-<!-- <?php
-$host='pk1l4ihepirw9fob.cbetxkdyhwsb.us-east-1.rds.amazonaws.com';
-$username='di0w8c6sa4ja5z5g';
-$password='z9hy4rajlj94flpq';	
-$port='3306';	
-$database='b7vgsrcqt19g1150';
-
-$conn = mysqli_connect($host, $username, $password, $database, $port);
-// Check connection
-
-if (!$conn) {
-    echo '<script>alert("not connected")</script>';
-}else{
-    echo '<script>alert("connected")</script>'; }
-echo"hi";
-if(isset($_POST["btnLogin"])){
-    
-    $mail=$_POST["mail"];   
-    $userPassword=$_POST["password"];    
-
-    $sql ="SELECT * FROM user WHERE mail='$mail' AND password='$userPassword'";
-    $result=mysqli_query($conn,$sql);
-    if(mysqli_num_rows($result)>0){
-    echo '<script>alert("correcte")</script>';
-    //   session_start();
-    //   $_SESSION["username"]=$mail;
-    header("Location:userProfile.html");
-    }else{
-        echo '<script>alert("not correcte")</script>';
-
-    header("Location:signup.html");
-    }
-}
-?> -->
 
 </html>

@@ -16,95 +16,99 @@
     <script src="post.js"></script>
 </head>
 
-<body >
-<?php
-                    session_start();
-                
-                    // Check if the session storage item exists
-                    $sessionExists = isset($_SESSION['mail']);
-                    ?>
-    <!-- <div id="loader">
-        <h2 data-text="mature...">mature...</h2>
-    </div> -->
-    <!-- <iframe src="loader.html" id="loading" frameborder="0"></iframe> -->
+<body>
+    <?php
+    include('php/config.php');
+    session_start();
+    $sessionExists = isset($_SESSION['mail']);
+    if ($sessionExists) {
+        $mail = $_SESSION['mail'];
+    } else {
+        $mail = 'matureThoughts@maturethoughts.com';
+    }
+    $sql = "SELECT * FROM user WHERE mail='$mail'";
+    $result = $conn->query($sql);
+    $userData = $result->fetch_assoc();
+    $postSql = "SELECT thoughts.time, user.name, thoughts.thoughts 
+    FROM thoughts
+    JOIN user ON user.mail = thoughts.mail ORDER BY id ";
+    $postResult = $conn->query($postSql);
+    // $postData = $postResult->fetch_assoc();
+    ?>
+
 
     <section class="body">
         <section class="leftPanal">
             <!-- Profile Card -->
             <div class="card">
-            <?php if (!$sessionExists):?>
                 <div class="profile" id="logedin">
                     <img src="/assets/logo.png" alt="" id="profilePic" class="profilePic-MD">
                     <div class="profileData">
-                        <h4>Mature Thoughts</h4>
-                        <!-- <h6>user_name</h6> -->
-                        <p><a href="">mail</a></p>
-                        <p id="aboutUser">A sanctuary for mature minds to exchange refined thoughts.</p>
-                    </div>
-                </div>
-                <?php else: ?>
+                        <h4>
+                            <?php echo $userData['name']; ?>
+                        </h4>
 
-                <div class="profile" id="logedout">
-                    <img src="/assets/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg" alt="" id="profilePic" class="profilePic-MD">
-                    <div class="profileData">
-                        <h4>Dinushan Sriskandaraja</h4>
-                        <!-- <h6>user_name</h6> -->
-                        <p><a href="">mail</a></p>
-                        <p id="aboutUser">Curator of Knowledge, Advocate of Wisdom, and Champion of Thoughtful Discourse. Join me in cultivating a community of mature minds.</p>
+                        <p><a href="">
+                                <?php echo $userData['mail']; ?>
+                            </a></p>
+                        <p id="aboutUser">
+                            <?php echo $userData['Bio']; ?>
+                        </p>
                     </div>
                 </div>
-                <?php endif; ?>
                 <div class="btnSet">
-                    
                     <button onclick="attemptQuiz()" id="quizBtn">Attumpt Quiz</button>
                     <button onclick="seePost()" id="postBtn">See Post</button>
-                    
-                    
-                
-                    <?php if ($sessionExists):?>
+                    <?php if ($sessionExists): ?>
                         <form method="post" action="/metureThought/php/access.php">
-            <button type="submit" name="logOut">Log Out</button>
-        </form>
+                            <button type="submit" name="logOut">Log Out</button>
+                        </form>
                     <?php else: ?>
-    
-                        <button  onclick='window.location.href = "access.html"'   >Log In</button>
+
+                        <button onclick='window.location.href = "access.html"'>Log In</button>
                     <?php endif; ?>
-                    
                 </div>
             </div>
             <a class="privacyPolicy" href="privacyPolicy.html">privacy policy</a>
         </section>
-
         <!-- Feed Panal -->
         <section class="feedPanal" id="scrollPost">
             <div class="scrollPost">
-                <div id="post">
-                    <div id="postUser">
-                        <img src="/assets/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg" alt="" srcset="" id="userProfilePic" class="profilePic-SM">
-                        <div class="userData">
-                            <a href="userProfile.html">
-                                <h6 id="userName">Dinushan Sriskandaraja</h6>
-                            </a>
-                            <p>12.00 P.M</p>
+                <?php while ($row = $postResult->fetch_assoc()) {?>
+                    <div id="post">
+                        <div id="postUser">
+                            <img src="/assets/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg"
+                                alt="" srcset="" id="userProfilePic" class="profilePic-SM">
+                            <div class="userData">
+                                <a href="userProfile.html">
+                                    <h6 id="userName">
+                                        <?php echo $row['name']; ?>
+                                    </h6>
+                                </a>
+                                <p>
+                                    <?php echo $row['time']; ?>
+                                </p>
+                            </div>
+                        </div>
+                        <div id="feedPost">
+                            <p>
+                                <?php echo $row['thoughts']; ?>
+                            </p>
                         </div>
                     </div>
-                    <div id="feedPost">
-                        <p>🚀 Excited to launch MatureThoughts, a space for insightful discussions and mature perspectives. Let's explore the depths of knowledge and wisdom together! 🧠💬 #MatureThoughts #WisdomSharing</p>
-                    </div>
-                </div>
+                    <?php }?>
                 <div id="postContainer"></div>
-                <?php if ($sessionExists):?>
-                <!-- Post Writing -->
-                <div class="newPost" id="postWriter">
-                    <form action="">
-                        <textarea name="" id="postContent"></textarea>
-                        <div class="postBtn">
-                            <!-- <button class="draft">Draft<i class="fa-regular fa-paper-plane"></i></button> -->
-                            <button class="share" onclick="sharePost()" type="reset">Share<i
-                                    class="fa-regular fa-paper-plane"></i></button>
-                        </div>
-                    </form>
-                </div>
+                <?php if ($sessionExists): ?>
+                    <!-- Post Writing -->
+                    <div class="newPost" id="postWriter">
+                        <form action="php/post.php" method="post">
+                            <textarea name="thought" id="postContent"></textarea>
+                            <div class="postBtn">
+                                <button class="share" type="submit" name="shareBtn">Share<i
+                                        class="fa-regular fa-paper-plane"></i></button>
+                            </div>
+                        </form>
+                    </div>
                 <?php endif; ?>
 
             </div>
@@ -113,42 +117,50 @@
         <section id="quiz"></section>
         <!-- <iframe  src="quiz.html" frameborder="0"></iframe> -->
         <!-- Own Post -->
-        <section class="rightPanal">
-            <div id="shared">
-                <h4>Your Writings</h4>
-                <!-- <div id="post">
-                    <div id="postUser">
-                        <img src="/assets/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg" alt="" srcset="" id="userProfilePic" class="profilePic-SM">
-                        <div class="userData">
-
-                            <h6 id="ownName">Dinushan Sriskandaraja</h6>
-                            <p>12.00 P.M</p>
+        <?php if ($sessionExists): ?>
+            <section class="rightPanal">
+                <div id="shared">
+                    <h4>Your Writings</h4>
+                    <?php
+                    $sql = "SELECT thoughts.time, user.name, thoughts.thoughts 
+                    FROM thoughts
+                    JOIN user ON thoughts.mail = user.mail
+                    WHERE thoughts.mail = '$mail' ORDER BY id DESC";
+                    $ownPost = $conn->query($sql);
+                    while ($draft = $ownPost->fetch_assoc()) {
+                        // Display user data in a loop
+                        ?>
+                        <div id="post">
+                            <div id="postUser">
+                                <img src="/assets/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg"
+                                    alt="" srcset="" id="userProfilePic" class="profilePic-SM">
+                                <div class="userData">
+                                    <a href="userProfile.html">
+                                        <h6 id="userName">
+                                            <?php echo $draft['name']; ?>
+                                        </h6>
+                                    </a>
+                                    <p>
+                                        <?php echo $draft['time']; ?>
+                                    </p>
+                                </div>
+                            </div>
+                            <div id="feedPost">
+                                <p>
+                                    <?php echo $draft['thoughts']; ?>
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                    <div id="ownPost">
-                        <p>🚀 Excited to launch MatureThoughts, a space for insightful discussions and mature perspectives. Let's explore the depths of knowledge and wisdom together! 🧠💬 #MatureThoughts #WisdomSharing</p>
-                    </div>
+                        <div id="postContainer"></div>
+                        <?php
+                    }
 
-                </div> -->
-                <div id="post">
-                    <div id="postUser">
-                        <img src="/assets/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg" alt="" srcset="" id="userProfilePic" class="profilePic-SM">
-                        <div class="userData">
-                            <a href="userProfile.html">
-                                <h6 id="userName">Dinushan Sriskandaraja</h6>
-                            </a>
-                            <p>12.00 P.M</p>
-                        </div>
-                    </div>
-                    <div id="feedPost">
-                        <p>🚀 Excited to launch MatureThoughts, a space for insightful discussions and mature perspectives. Let's explore the depths of knowledge and wisdom together! 🧠💬 #MatureThoughts #WisdomSharing</p>
-                    </div>
+                    // Free the result set
+                    ?>
                 </div>
-                <div id="postContainer"></div>
 
-            </div>
-
-        </section>
+            </section>
+        <?php endif ?>
     </section>
 </body>
 

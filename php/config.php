@@ -8,5 +8,4 @@ $database='b7vgsrcqt19g1150';
 $conn = mysqli_connect($host, $username, $password, $database, $port);
 // Check connection
 
-
 ?>
