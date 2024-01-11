@@ -2,7 +2,7 @@
 session_start();
 include('config.php');
 if(isset($_POST["shareBtn"])){
-echo'clicked';
+    echo'clicked';
 
     $time=date('Y-m-d H:i');
     $mail = $_SESSION['mail'];

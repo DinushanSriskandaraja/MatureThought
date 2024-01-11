@@ -57,14 +57,18 @@
                     </div>
                 </div>
                 <div class="btnSet">
-                    <button onclick="attemptQuiz()" id="quizBtn">Attumpt Quiz</button>
-                    <button onclick="seePost()" id="postBtn">See Post</button>
+                    
                     <?php if ($sessionExists): ?>
                         <form method="post" action="/metureThought/php/access.php">
                             <button type="submit" name="logOut">Log Out</button>
                         </form>
+                        <form method="post" action="/metureThought/editProfile.php">
+                            <input type="hidden" name="mail"  value="<?php echo $_SESSION['mail']?>">
+                            <button type="submit" name="editProfile" >Edit Profile</button>
+                        </form>
                     <?php else: ?>
-
+                        <button onclick="attemptQuiz()" id="quizBtn">Attumpt Quiz</button>
+                    <button onclick="seePost()" id="postBtn">See Post</button>
                         <button onclick='window.location.href = "access.php"'>Log In</button>
                     <?php endif; ?>
                 </div>

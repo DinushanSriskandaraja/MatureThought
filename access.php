@@ -16,7 +16,7 @@
             <form id="login" action="/metureThought/php/access.php" method="post">
                 <h4>Log In</h4>
                 <input type="email" name="mail" id="mail">
-                <label for="email">Email</label>
+                <label for="mail">Email</label>
                 <input type="password" name="password" id="password">
                 <label for="password">Password</label>
                 <button type="submit" name="btnLogin">Log In</button>
