@@ -59,10 +59,10 @@
                 <div class="btnSet">
                     
                     <?php if ($sessionExists): ?>
-                        <form method="post" action="/php/access.php">
+                        <form method="post" action="/metureThought/php/access.php">
                             <button type="submit" name="logOut">Log Out</button>
                         </form>
-                        <form method="post" action="/editProfile.php">
+                        <form method="post" action="/metureThought/editProfile.php">
                             <input type="hidden" name="mail"  value="<?php echo $_SESSION['mail']?>">
                             <button type="submit" name="editProfile" >Edit Profile</button>
                         </form>
@@ -105,7 +105,7 @@
                 <?php if ($sessionExists): ?>
                     <!-- Post Writing -->
                     <div class="newPost" id="postWriter">
-                        <form action="/php/post.php" method="post">
+                        <form action="/metureThought/php/post.php" method="post">
                             <textarea name="thought" id="postContent"></textarea>
                             <div class="postBtn">
                                 <button class="share" type="submit" name="shareBtn">Share<i
