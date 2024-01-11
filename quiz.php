@@ -13,7 +13,7 @@
 </head>
 
 <body>
-
+       
 
     <div class="quiz-container">
         <h1>Quiz Time</h1>
@@ -27,7 +27,7 @@
         </div>
         <!-- <button id="next-button">Next</button> -->
     </div>
-
+    
     <!-- <script src="script.js"></script> -->
 
 

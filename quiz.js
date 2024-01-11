@@ -46,13 +46,9 @@ function displayQuestion(question) {
 
 function checkAnswer(selectedOption, correctAnswer) {
     if (selectedOption === correctAnswer) {
-        // Handle correct answer
         ++correctAnswerCount;
     }
-    // else {
-    //     // Handle incorrect answer
-    //     alert("Incorrect. The correct answer is: " + correctAnswer);
-    // }
+
 
     currentQuestionIndex++;
 
@@ -60,7 +56,14 @@ function checkAnswer(selectedOption, correctAnswer) {
         displayQuestion(questions[currentQuestionIndex]);
     } else {
         if ((correctAnswerCount / questions.length) * 100 >= 70) {
-            window.location.href = "signup.html";
+            // document.getElementById("score").value = (correctAnswerCount / questions.length) * 100 >= 70;
+            // document.cookie = "score=123; path=/";
+            document.cookie = "score=" + (correctAnswerCount / questions.length) * 100 + "; path=/";
+            console.log("score=" + (correctAnswerCount / questions.length) * 100 + "; path=/")
+            window.location.href = "signup.php";
+
+
+
         } else {
             alert("Score is insufficient, Please try again")
             seePost();

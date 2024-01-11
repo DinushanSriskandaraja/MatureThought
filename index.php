@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <link rel="stylesheet" href="style.css">
-    <!-- <script src="script.js"></script> -->
+    <script src="script.js"></script>
     <script src="post.js"></script>
 </head>
 
@@ -60,7 +60,7 @@
                     <button onclick="attemptQuiz()" id="quizBtn">Attumpt Quiz</button>
                     <button onclick="seePost()" id="postBtn">See Post</button>
                     <?php if ($sessionExists): ?>
-                        <form method="post" action="php/access.php">
+                        <form method="post" action="/metureThought/php/access.php">
                             <button type="submit" name="logOut">Log Out</button>
                         </form>
                     <?php else: ?>
@@ -101,7 +101,7 @@
                 <?php if ($sessionExists): ?>
                     <!-- Post Writing -->
                     <div class="newPost" id="postWriter">
-                        <form action="php/post.php" method="post">
+                        <form action="/metureThought/php/post.php" method="post">
                             <textarea name="thought" id="postContent"></textarea>
                             <div class="postBtn">
                                 <button class="share" type="submit" name="shareBtn">Share<i
@@ -143,6 +143,8 @@
                                     <p>
                                         <?php echo $draft['time']; ?>
                                     </p>
+
+                                    
                                 </div>
                             </div>
                             <div id="feedPost">
