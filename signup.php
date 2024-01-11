@@ -34,7 +34,7 @@ var scoreValue = getCookie("score");
 console.log("Score from cookie: " + scoreValue);</script> -->
     <section>
         <div class="signUp" id="signUp">
-            <form action="/metureThought/php/access.php" method="post" id="signup">
+            <form action="/php/access.php" method="post" id="signup">
                 <!-- <input type="text" name="mail"><label for="">Email</label> -->
                 <input type="text" id="name" name="name"><label for="name">user name</label>
                 <input type="email" id="mail" name="mail"><label for="mail">Email Address</label>
