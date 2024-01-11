@@ -37,7 +37,7 @@
     
     if($updateStmt->execute()){
         // Profile updated successfully
-        echo "Profile updated successfully!";
+        header('Location:index.php');
     } else {
         // Handle the case where the update fails
         echo "Error updating profile: " . $updateStmt->error;
