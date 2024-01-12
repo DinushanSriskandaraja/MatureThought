@@ -13,7 +13,7 @@
 <body>
     <?php 
     include('php/config.php');
-    if(isset($_SESSION['mail'])){
+    if(!isset($_SESSION['mail'])){
         header("Location:index.php");
     }
     if(isset($_POST['editProfile'])){

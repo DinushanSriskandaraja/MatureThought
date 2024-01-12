@@ -1,5 +1,5 @@
 <?php
-if (isset($_SESSION['admin'])) {
+if (!isset($_SESSION['adminMail'])) {
     header('Location:/index.php');
 }
 include('php/config.php');
